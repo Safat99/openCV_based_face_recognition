@@ -7,3 +7,7 @@ Objective:
 
 ---
 
+Face Detection
+
+check out this tutorial: [PyImageSearch](https://pyimagesearch.com/2021/04/05/opencv-face-detection-with-haar-cascades/)
+
