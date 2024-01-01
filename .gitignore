@@ -3,3 +3,4 @@ env/
 .vscode/
 face_detection/test_images/
 face_detection/__pycache__/
+face_detection/sample_detections/faces/
