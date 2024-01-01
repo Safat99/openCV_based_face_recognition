@@ -9,5 +9,12 @@ Objective:
 
 Face Detection
 
-check out this tutorial: [PyImageSearch](https://pyimagesearch.com/2021/04/05/opencv-face-detection-with-haar-cascades/)
+* check out this tutorial: [PyImageSearch](https://pyimagesearch.com/2021/04/05/opencv-face-detection-with-haar-cascades/)
 
+* using mediaPipe: [MediaPipe medium Tutorial](https://medium.com/mlearning-ai/detecting-face-at-30-fps-on-cpu-on-mediapipe-python-dda264e26f20)
+
+---
+
+Face Recognition
+
+* openCV's LBPH approach [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2021/07/understanding-face-recognition-using-lbph-algorithm/)
