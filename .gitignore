@@ -1,0 +1,5 @@
+venv/
+env/
+.vscode/
+face_detection/test_images/
+face_detection/__pycache__/
