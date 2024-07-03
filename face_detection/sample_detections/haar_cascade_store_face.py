@@ -24,7 +24,7 @@ while cap.isOpened():
 
     for (x, y, w, h) in faces:
         face_image = image[y:y+h, x:x+w]
-        cv2.imwrite(f"faces/face_{frame_count}.jpg", face_image)
+        cv2.imwrite(f"faces_haarcascade/face_{frame_count}.jpg", face_image)
         frame_count += 1
         logging.warning("saved %d images for training..",frame_count)
 
