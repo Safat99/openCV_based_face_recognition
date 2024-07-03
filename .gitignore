@@ -4,3 +4,11 @@ env/
 face_detection/test_images/
 face_detection/__pycache__/
 face_detection/sample_detections/faces/
+face_detection/sample_detections/faces_haarcascade/
+
+dataset/
+trained_models/**.yml
+
+face_recognition/*.jpg
+face_recognition/*.jpeg
+face_recognition/*.png

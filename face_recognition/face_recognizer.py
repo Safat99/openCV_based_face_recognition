@@ -54,7 +54,7 @@ if __name__ == "__main__":
     # face_recognizer.train()
     # logging.warning("train done!")
 
-    image_path = 'test4.jpg'
+    image_path = 'test1.png'
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
     label, confidence = face_recognizer.predict(image)

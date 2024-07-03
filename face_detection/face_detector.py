@@ -12,14 +12,16 @@ class FaceDetector:
         # Initialize MediaPipe Face Detection.
         self.mp_face_detection = mp.solutions.face_detection
         self.mp_drawing = mp.solutions.drawing_utils
-        self.face_detection = self.mp_face_detection.FaceDetection(min_detection_confidence=0.5)
+        self.face_detection = self.mp_face_detection.FaceDetection(
+            min_detection_confidence=0.5)
         self.is_mp = False
 
     def detect_faces_haarcascade(self, image):
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         # Detect faces in the image
-        faces = self.face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+        faces = self.face_cascade.detectMultiScale(
+            gray, scaleFactor=1.05, minNeighbors=10, minSize=(30, 30))
 
         return faces, len(faces)
 
@@ -45,9 +47,10 @@ class FaceDetector:
         if mp_processing_results.detections:
             for detection in mp_processing_results.detections:
                 self.mp_drawing.draw_detection(image, detection)
-   
+
     def display_result(self, image):
-        cv2.imshow('Face Detection Media Pipe', image) if self.is_mp == True else cv2.imshow('Face Detection', image)
+        cv2.imshow('Face Detection Media Pipe', image) if self.is_mp == True else cv2.imshow(
+            'Face Detection', image)
         cv2.waitKey(0)  # Wait for a key press
         cv2.destroyAllWindows()
 
@@ -69,17 +72,19 @@ def main():
 
     # Detect faces
     detected_faces, num_faces = face_detector.detect_faces_haarcascade(image)
-    print(f"total {num_faces} faces found in the image")
+    print(f"total {num_faces} faces found with haar_cascade in the image")
 
     if num_faces == 0:
         # calling the media pipe for detecting faces
         mp_processing_results, num_faces = face_detector.detect_faces_mp(image)
-        
+
         if num_faces is None:
             print("Error: Unable to detect any face with Media Pipe Library as well")
             return
         else:
-            face_detector.draw_faces_mp(image = image, mp_processing_results = mp_processing_results)
+            face_detector.draw_faces_mp(
+                image=image, mp_processing_results=mp_processing_results)
+            print(f"total {num_faces} faces found with mediapipe library in the image")
 
     else:
         # Draw faces on the image
@@ -87,6 +92,7 @@ def main():
 
     # Display the result
     face_detector.display_result(image)
+
 
 if __name__ == "__main__":
     main()
